@@ -59,15 +59,15 @@ python app.py
 * Influencing Author (Q3)
 
   
-##Functionalities
+## Functionalities
 
-*Keyword Discovery
+* Keyword Discovery
 
 Users can enter a research topic, and the tool returns a list of authors working on that topic with relevance and score estimates.
-*Researcher Profiling
+* Researcher Profiling
 
 Users can enter the name of a researcher, and the tool extracts all the topics on which the researcher has been working, along with a list of keyword similarities for each topic.
-*Influencing Author
+* Influencing Author
 
 Users can enter a research topic, and the tool extracts a list of more influential authors working on that topic using the PageRank algorithm.
 
