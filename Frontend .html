@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DBLP Search</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>DBLP Search</h1>
+    <input type="text" id="searchInput" placeholder="Enter a keyword">
+    <button onclick="searchDBLP()">Search</button>
+
+    <div id="results"></div>
+
+    <script>
+        function searchDBLP() {
+            const keyword = document.getElementById('searchInput').value;
+            
+            // Send a POST request to your backend API
+            fetch('/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ keyword: keyword }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display search results on the page
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '';
+
+                for (const result of data) {
+                    resultsDiv.innerHTML += `<p>${result['a.name']} - ${result['p.title']}</p>`;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
